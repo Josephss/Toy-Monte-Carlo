@@ -58,8 +58,22 @@ public class Monte_carlo {
 	}
 	public static void main(String[] args) {
 		
-		System.out.println(distanceCalculator(.3,2,5)); // test case
-		System.out.println(survivalCalculator(2,5,9.485599924429406));
+		//System.out.println(distanceCalculator(.3,2,5)); // test case
+	//	System.out.println(survivalCalculator(2,5,9.485599924429406));
+		
+		/*
+		 * Given probability of interaction per given length to be .75 (1/cm) and a distance range of 0 - 6 cm
+		 * 
+		 */
+	double[] transmission = new double[102]; // T = i/i_0
+	
+	for(int i = 1; i <= 100; i++){
+		transmission[i] = survivalCalculator(1, 0.75, i);
+	}
+		for(int i = 1; i<101; i++){
+			System.out.println(i +  " " + transmission[i]);
+			
+		}
 	}
 	
 	
